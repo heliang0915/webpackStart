@@ -1,0 +1,4 @@
+{
+  "plugins": [],
+  "presets": ["es2015","stage-0","react"] /*stage-0 支持es7*/
+}
