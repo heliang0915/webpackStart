@@ -13,9 +13,6 @@ module.exports={
            test:/\.js$|\.jsx$/,
            loader:"babel-loader"
            ,
-           // include: [
-           //     path.join(process.cwd(),"./src")
-           // ],
            exclude:[
                path.join(__dirname,'node_modules')
            ]
@@ -33,5 +30,14 @@ module.exports={
             context: __dirname,
             manifest: require('./vendor-manifest.json')
         })
+        // ,
+        // new webpack.optimize.UglifyJsPlugin({
+        //     output: {
+        //         comments: false,
+        //     },
+        //     compress: {
+        //         warnings: false
+        //     }
+        // })
     ]
 }
