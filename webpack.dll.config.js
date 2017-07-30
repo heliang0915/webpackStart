@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        vendor: ['isomorphic-fetch'] //'react','react-dom','redux','react-redux','react-router',
+        vendor: ['react','react-dom','redux','react-redux','react-router','isomorphic-fetch'] //'react','react-dom','redux','react-redux','react-router',
     },
     output: {
         path: path.join(__dirname, 'assets/libs'),

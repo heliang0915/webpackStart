@@ -14,7 +14,6 @@ class App extends Component{
   }
   componentDidMount(){
       fetch('https://api.github.com/users').then((res)=>res.json()).then((json)=>{
-          // console.log(json.length);
           this.setState({
               len:json.length
           })

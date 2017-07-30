@@ -3,18 +3,15 @@ let  path =require('path');
 let debug =require('morgan');
 let  cookieParser =require('cookie-parser');
 let  bodyParser =require('body-parser');
+let compression=require("compression");
 let cacheTime=24*60*60*1000;
-let App=express();
-App.use(debug('dev'));
-App.use(cookieParser());
-App.use(bodyParser.json());
-App.use(bodyParser.urlencoded({extended:false}));
-
-App.use(express.static(path.join(__dirname,"/../build/")));
-App.use(express.static(path.join(__dirname,"/../assets/")));
-App.use(express.static(path.join(__dirname,"/../html/")));
-
-App.use((req,res,next)=>{
+let app=express();
+app.use(compression());
+app.use(debug('dev'));
+app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
+app.use((req,res,next)=>{
     let date=new Date();
     date.setTime(date.getTime()+cacheTime);
     res.header("Access-Control-Allow-Origin", "*");
@@ -23,6 +20,9 @@ App.use((req,res,next)=>{
     res.header("Expires",date.toUTCString());
     next();
 })
+app.use(express.static(path.join(__dirname,"/../build/")));
+app.use(express.static(path.join(__dirname,"/../assets/")));
+app.use(express.static(path.join(__dirname,"/../html/")));
 
 // App.use("/api/",api)
 // App.use("/",index);
@@ -37,7 +37,7 @@ App.use((req,res,next)=>{
 // }
 
 
-module.exports=App;
+module.exports=app;
 
 
 

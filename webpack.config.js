@@ -18,13 +18,13 @@ module.exports={
            ]
        }]
     },
-    externals:{
-        'react': 'React',
-        'react-dom': 'ReactDOM',
-        'redux':'Redux',
-        'react-redux':'ReactRedux',
-        'react-router':'ReactRouter'
-    },
+    // externals:{
+    //     'react': 'React',
+    //     'react-dom': 'ReactDOM',
+    //     'redux':'Redux',
+    //     'react-redux':'ReactRedux',
+    //     'react-router':'ReactRouter'
+    // },
     plugins: [
         new webpack.DllReferencePlugin({
             context: __dirname,
