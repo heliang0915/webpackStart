@@ -22,7 +22,7 @@ app.use((req,res,next)=>{
 })
 app.use(express.static(path.join(__dirname,"/../build/")));
 app.use(express.static(path.join(__dirname,"/../assets/")));
-app.use(express.static(path.join(__dirname,"/../html/")));
+// app.use(express.static(path.join(__dirname,"/../html/")));
 
 // App.use("/api/",api)
 // App.use("/",index);
