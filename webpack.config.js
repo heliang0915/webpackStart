@@ -39,7 +39,7 @@ module.exports = {
 		// }),
 		new HtmlWebpackPlugin({
 			title: "AAAA",
-			template: path.join(__dirname, 'src/template/index.ejs')
+			template: path.join(__dirname, 'template/index.ejs')
 		}),
 		// new webpack.optimize.UglifyJsPlugin({
 		//     output: {
